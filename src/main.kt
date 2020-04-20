@@ -107,7 +107,7 @@ fun isPoker(cubes: MutableList<Cube>){
 
 fun isScale(cubes: MutableList<Cube>){
     if(largeScale(cubes)){
-        println("\nBig scale! (1-6) ")
+        println("\nBig scale! (2-6) ")
     }else if(smallScale(cubes))
         println("\nSmall scale! (1-5) ")
     else println("\nSorry, not scale ")
@@ -135,7 +135,6 @@ fun smallScale(cubes: MutableList<Cube>):Boolean{
 }
 
 fun largeScale(cubes: MutableList<Cube>):Boolean{
-    var br1:Int = 0
     var br2:Int = 0
     var br3:Int = 0
     var br4:Int = 0
@@ -145,7 +144,6 @@ fun largeScale(cubes: MutableList<Cube>):Boolean{
     for(cube in cubes)
     {
         when(cube.getVal()){
-            1 -> br1++
             2 -> br2++
             3 -> br3++
             4 -> br4++
@@ -153,7 +151,7 @@ fun largeScale(cubes: MutableList<Cube>):Boolean{
             6 -> br6++
         }
     }
-    return br1 > 0 && br2 > 0 && br3 > 0 && br4 > 0 && br5 > 0 && br6 > 0
+    return br2 > 0 && br3 > 0 && br4 > 0 && br5 > 0 && br6 > 0
 }
 
 
