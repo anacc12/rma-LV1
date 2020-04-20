@@ -151,6 +151,7 @@ fun largeScale(cubes: MutableList<Cube>):Boolean{
             6 -> br6++
         }
     }
+
     return br2 > 0 && br3 > 0 && br4 > 0 && br5 > 0 && br6 > 0
 }
 
