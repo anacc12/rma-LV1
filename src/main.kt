@@ -10,17 +10,11 @@ fun throwCubes(cubes: MutableList<Cube>, counter: Int){
 
     throwAgain(cubes)
     var secondCubes: MutableList<Cube> = mutableListOf<Cube>()
-    println("Enter indexes of cubes you want to lock [1-6](separated by ' '): ")
-    val lockedIndexes: List<Int> = readLine()!!.split(' ').map(String::toInt)
+    println("Enter indexes of cubes you want to lock [1-6] or [0] if nothing (separated by ','): ")
+    val lockedIndexes: List<Int> = readLine()!!.split(',').map(String::toInt)
     secondCubes = lockCubes(cubes, lockedIndexes)
 
     if(secondCounter<4) {
-        print("Currently unlocked cubes: ")
-        for (cube in secondCubes) {
-            if (!cube.getLock())
-                print("" + cube.getVal() + " ")
-        }
-        print("\n")
         print("Currently locked cubes: ")
         for (cube in secondCubes) {
             if (cube.getLock())
